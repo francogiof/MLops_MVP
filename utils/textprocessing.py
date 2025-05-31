@@ -29,7 +29,10 @@ class TextProcessing:
         self.logger = logging.getLogger(__name__)
 
         nltk.download("averaged_perceptron_tagger")
-        self.lenguage = language
+        nltk.download("punkt")
+        nltk.download("punkt_tab")
+        nltk.download(f"averaged_perceptron_tagger_eng")
+        self.language = language
         self.stop_words = set(stopwords.words(self.language))
         self.stemmer = SnowballStemmer(self.language)
 
